@@ -5,6 +5,7 @@ import Vault from "./pages/Vault";
 import Game from "./pages/Game";
 import Audio from "./pages/Audio";
 import Profile from "./pages/Profile";
+import Loading from "./pages/Loading.jsx"
 
 import BottomNavigation from "./components/BottomNavigation";
 
@@ -12,7 +13,7 @@ function App() {
   return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/" element={<Loading />} />
           <Route path="/home" element={<Home />} />
           <Route path="/vault" element={<Vault />} />
           <Route path="/game" element={<Game />} />
