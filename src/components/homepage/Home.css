@@ -1,0 +1,269 @@
+.home_page{
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 120px;
+    box-sizing: border-box;
+}
+
+
+.home_header{
+    color: #35C6B2;
+    padding: 30px 80px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.profile_section{
+    align-items:center;
+    display: flex;
+    gap: 15px;
+}
+.profile_section img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+}
+.home_header h2{
+    color: white;
+    margin: 0;
+
+}
+.first_paragraph {
+    color: #25C6B7;
+    margin-top: 3px;
+}
+.streak_badge{
+    background-color:#F5C76B;
+    color: #172B49;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #35C6B2;
+    font-weight: bold;
+    align-self: flex-end;
+    margin-top: -55px;
+
+}
+.home_header h1{
+    color: white;
+    margin-top: 20px;
+}
+.home_header span{
+    color: #35C6B2;
+}
+.home_description{
+    color: #D5D5E5;
+    font-size: 18px;
+}
+
+/*Burnvault css*/
+.burn-vault {
+    padding: 15px 60px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 25px auto;
+    border: 1px solid #1769a8;
+    border-radius: 20px;
+
+
+}
+.title {
+    color:#35C6B2;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+
+}
+.burn-time{
+    color: red;
+    border-radius: 30px;
+    background-color: #0F1E2A;
+    padding: 10px 20px;
+    border: 1px solid red;
+    width: fit-content;
+    font-size: 14px;
+
+}
+.thought_box{
+    padding: 10px 10px;
+    width: 100%;
+    max-width: 1300px;
+    margin-top: 25px;
+    border: 1px solid #1769a8;
+    border-radius: 10px;
+}
+.thought_box h3{
+    color: #D5D5E5;
+
+}
+.lock{
+    padding-bottom: 10px;
+}
+.character-count {
+    text-align: right;
+    color: green;
+    font-size: 14px;
+}
+.burn-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.burn-options span {
+    color: white;
+    font-size: 18px;
+}
+
+.burn-options button {
+    padding: 10px 40px;
+    border-radius: 30px;
+    border: 1px solid #52799f;
+    background-color: #173858;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.burn-options button:focus {
+    border: 2px solid orange;
+    background-color: #F5C76B;
+}
+.release_button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 40px;
+    background:  #ff9a3c;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+
+}
+.release-button:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+
+.active_burn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 25px;
+    margin-top: 25px;
+    border: 1px solid #286da5;
+    border-radius: 25px;
+}
+
+
+.burn_icon {
+    width: 85px;
+    height: 85px;
+    min-width: 85px;
+    display: flex;
+    align-items: center;
+    border-radius: 18px;
+    font-size: 48px;
+}
+
+
+.burn_divider {
+    width: 2px;
+    height: 90px;
+    min-width: 2px;
+    background: #41678e;
+}
+
+.burn_details {
+    flex: 1;
+    min-width: 0;
+}
+
+.active_burn_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.active_burn_header h4 {
+    color: white;
+    font-size: 20px;
+    margin: 0 0 5px;
+}
+
+.active_burn_header h3 {
+    color: white;
+    font-size: 22px;
+    margin: 0;
+}
+
+.burn_count {
+    color: #F5C76B;
+    border: 1px solid #F5C76B;
+    border-radius: 30px;
+    padding: 10px 15px;
+    margin: 0;
+}
+
+.burn_description {
+    color: #D5E5F5;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.burn_progress_row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.burn_progress_fill {
+    width: 42%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ffb52e, #ff6035);
+
+}
+.burn_progress {
+    flex: 1;
+    height: 13px;
+    background: #12395f;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.burn_progress_row span {
+    color: #ff7545;
+    font-weight: bold;
+    font-size: 20px;
+}
+/*mindfulPortals*/
+.mindful-portals {
+    border: 1px solid #286da5;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 30px auto;
+    max-width: 1400px;
+
+
+}
+.quick_session{
+    text-align: right;
+
+}
