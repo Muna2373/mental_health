@@ -1,0 +1,482 @@
+/* Container & Mobile Layout */
+.page-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #090d16;
+    min-height: 100vh;
+    padding: 24px 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.mobile-frame {
+    display: flex;
+    height: 880px;
+    width: 100%;
+    max-width: 390px;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 40px;
+    background-color: #020617;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border: 1px solid #1e293b;
+}
+
+.scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 16px;
+}
+
+.scrollable-content::-webkit-scrollbar {
+    display: none;
+}
+.scrollable-content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Top Nav */
+.top-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    color: #ffffff;
+    background-color: #020617;
+}
+
+.top-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.action-btn {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.action-btn:hover {
+    color: #ffffff;
+}
+
+.title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #34d399;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.right-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-btn {
+    display: flex;
+    height: 32px;
+    width: 32px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: #34d399;
+    color: #0f172a;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Mode Banner */
+.mode-banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 9999px;
+    background-color: rgba(6, 78, 59, 0.6);
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(6, 95, 70, 0.4);
+}
+
+.status-dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 9999px;
+    background-color: #34d399;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.mode-highlight {
+    color: #34d399;
+    font-weight: 700;
+}
+
+.mode-subtext {
+    color: #9ca3af;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 0;
+}
+
+/* Breath Widget */
+.breathing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+}
+
+.circle-wrapper {
+    position: relative;
+    display: flex;
+    height: 256px;
+    width: 256px;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-ring {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(-90deg);
+}
+
+.ring-background {
+    stroke: #1f2937;
+}
+
+.ring-progress {
+    stroke: #34d399;
+}
+
+.circle-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.state-label {
+    font-size: 24px;
+    font-weight: 500;
+    color: #34d399;
+}
+
+.time-display {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 4px 0;
+}
+
+.remaining-time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+.haptic-info {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(52, 211, 153, 0.9);
+    font-weight: 500;
+}
+
+.spin-icon {
+    animation: spin 4s linear infinite;
+}
+
+/* Metrics Dashboard */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0 16px;
+}
+
+.metric-card {
+    border-radius: 16px;
+    background-color: rgba(15, 23, 42, 0.8);
+    padding: 16px;
+    border: 1px solid #1e293b;
+}
+
+.metric-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+    color: #9ca3af;
+}
+
+.trend-up {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #34d399;
+}
+
+.trend-down {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #22d3ee;
+}
+
+.metric-value-row {
+    margin-top: 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.metric-number {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.metric-number.cyan {
+    color: #22d3ee;
+}
+
+.metric-unit {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.metric-footer {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.dot-emerald {
+    height: 6px;
+    width: 6px;
+    border-radius: 9999px;
+    background-color: #34d399;
+}
+
+.dot-cyan {
+    height: 6px;
+    width: 6px;
+    border-radius: 9999px;
+    background-color: #22d3ee;
+}
+
+/* Waves (Audio Player) */
+.audio-card {
+    margin: 12px 16px;
+    border-radius: 16px;
+    background-color: rgba(15, 23, 42, 0.8);
+    padding: 16px;
+    border: 1px solid #1e293b;
+    color: #ffffff;
+}
+
+.audio-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.audio-title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.audio-icon-box {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: #082f49;
+    color: #22d3ee;
+    border: 1px solid rgba(14, 116, 144, 0.4);
+}
+
+.audio-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.audio-subtitle {
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 2px 0 0 0;
+}
+
+.hz-highlight {
+    color: #22d3ee;
+    font-weight: 500;
+}
+
+.visualizer-container {
+    margin-top: 16px;
+    border-radius: 12px;
+    background-color: rgba(2, 6, 23, 0.7);
+    padding: 12px;
+}
+
+.visualizer-bars {
+    display: flex;
+    height: 56px;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 0 8px;
+}
+
+.bar {
+    width: 6px;
+    border-radius: 9999px;
+    background-color: #34d399;
+}
+
+.bar.peak {
+    background-color: #22d3ee;
+}
+
+.visualizer-labels {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #9ca3af;
+    padding: 0 4px;
+}
+
+.audio-controls {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.volume-slider {
+    height: 6px;
+    width: 64px;
+    border-radius: 9999px;
+    background-color: #1e293b;
+    overflow: hidden;
+}
+
+.volume-fill {
+    height: 100%;
+    width: 66%;
+    border-radius: 9999px;
+    background-color: #34d399;
+}
+
+.playback-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.play-pause-btn {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: #34d399;
+    color: #020617;
+    border: none;
+    cursor: pointer;
+}
+
+/* Info Card */
+.info-card {
+    margin: 12px 16px;
+    border-radius: 16px;
+    background-color: rgba(15, 23, 42, 0.6);
+    padding: 16px;
+    border: 1px solid rgba(30, 41, 59, 0.8);
+    }
+
+.info-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.info-icon {
+    color: #22d3ee;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.info-heading {
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.info-text {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: #9ca3af;
+    line-height: 1.5;
+}
+
+/* Keyframe Animations */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
