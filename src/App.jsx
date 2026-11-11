@@ -1,17 +1,32 @@
 
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Vault from "./pages/Vault";
 import Game from "./pages/Game";
 import CalmPulse from "./pages/CalmPulse.jsx";
 import Profile from "./pages/Profile";
+import Loading from "./pages/Loading.jsx"
 
 import BottomNavigation from "./components/BottomNavigation";
 
 function App() {
-  return (
-      <BrowserRouter>
+    const [isLoading, setIsLoading] = useState(true);
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 2500);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading) {
+        return <Loading />;
+    }
+
+    return (
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />

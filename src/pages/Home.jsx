@@ -1,9 +1,13 @@
-
+import HomeHeader from "../components/homepage/HomeHeader.jsx";
+import BurnVault from "../components/homepage/BurnVault.jsx";
+import MindfulPortals from "../components/homepage/MindfulPortals.jsx";
+import "../components/homepage/Home.css";
 function Home() {
     return (
-        <div>
-            <h1> Home Page</h1>
-            <p>Release your stress and negative thoughts.</p>
+        <div className="home_page">
+           <HomeHeader/>
+            <BurnVault/>
+            <MindfulPortals/>
         </div>
     );
 }

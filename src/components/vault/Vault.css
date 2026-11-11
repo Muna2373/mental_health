@@ -1,0 +1,294 @@
+/* ==========================================
+   Vault Screen & Components Combined CSS
+   ========================================== */
+
+/* --- 1. Vault Header --- */
+.vault-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.vault-back-btn {
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.vault-title-group h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: var(--text-main);
+}
+
+.vault-subtitle {
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+.vault-streak-badge {
+    background-color: rgba(255, 87, 34, 0.15);
+    border: 1px solid rgba(255, 87, 34, 0.4);
+    border-radius: 20px;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent-orange);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* --- 2. Somatic Tags --- */
+.somatic-container {
+    margin-bottom: 20px;
+}
+
+.somatic-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 11px;
+}
+
+.somatic-label {
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.somatic-hint {
+    color: var(--accent-green);
+}
+
+.somatic-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.somatic-tag-btn {
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.somatic-tag-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+
+/* --- 3. Sanctuary Canvas --- */
+.canvas-card {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.canvas-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 11px;
+}
+
+.canvas-title-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #FF7043;
+}
+
+.canvas-title-text {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.canvas-char-count {
+    color: var(--text-muted);
+}
+
+.sanctuary-textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-main);
+    font-size: 14px;
+    resize: none;
+    line-height: 1.5;
+    font-family: inherit;
+}
+
+.sanctuary-textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.canvas-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 12px;
+}
+
+.encryption-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent-green);
+}
+
+.reset-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    transition: color 0.2s;
+}
+
+.reset-btn:hover {
+    color: var(--text-main);
+}
+
+
+/* --- 4. Auto-Decay Protocol --- */
+.decay-card {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.decay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.decay-title-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.decay-badge {
+    font-size: 11px;
+    color: #FFB74D;
+    background-color: rgba(255, 183, 77, 0.1);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.decay-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.decay-option-box {
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.decay-option-box.active {
+    border: 1px solid var(--accent-orange);
+    background-color: rgba(255, 87, 34, 0.05);
+}
+
+.decay-option-box.inactive {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+}
+
+.decay-option-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.decay-time-val {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 6px 0 2px;
+}
+
+.decay-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.decay-footer-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+
+/* --- 5. Action Buttons --- */
+.actions-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-secondary-burn {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    color: var(--text-muted);
+    padding: 12px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 16px;
+    transition: all 0.2s;
+}
+
+.btn-secondary-burn:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-main);
+}
+
+.actions-footer-text {
+    font-size: 9px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
