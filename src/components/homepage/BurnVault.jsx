@@ -9,7 +9,7 @@ function BurnVault() {
             <p>
                 Release your burdens into smoke. Transcribe what weighs on you and set it to auto-destruct.
             </p>
-            <div className="thought_box">
+            {/*<div className="thought_box">
                 <h3> ✍️ What's on your mind today??</h3>
 
                 <textarea placeholder="Write your thoughts, feelings, or worries here...." maxLength={500}
@@ -18,7 +18,7 @@ function BurnVault() {
                 <div className="character-count">
                     0 / 500
                 </div>
-            </div>
+            </div>*/}
             <div className="lock"> 🔒 Your thoughts are private and will be automatically deleted after the selected time
             </div>
             <div className="burn_options">

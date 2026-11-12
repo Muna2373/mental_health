@@ -2,7 +2,7 @@ import { GiYinYang } from "react-icons/gi";
 
 export default function SplashScreen() {
     return (
-        <div style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+        <div className="splash-screen">
             <div style={{ fontSize: '64px', marginBottom: '20px' }}> <GiYinYang/></div>
             <h1>Take a deep breath...</h1>
             <p style={{ color: 'var(--text-muted)', marginBottom: '40px' }}>Let it go into the void.</p>

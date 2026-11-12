@@ -1,8 +1,11 @@
+import TopNav from "../components/calm/TopNav.jsx";
+import ProfilePage from "../components/profile/Profile.jsx";
+
 function Profile() {
     return (
         <div>
-            <h1>My Profile</h1>
-            <p>Welcome to your profile.</p>
+            <TopNav/>
+            <ProfilePage/>
         </div>
     );
 }
