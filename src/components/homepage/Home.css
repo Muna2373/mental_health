@@ -263,7 +263,134 @@
 
 
 }
-.quick_session{
-    text-align: right;
+.mindful_header {
+    display: flex;
 
+
+}
+.mindful_header span{
+    text-align: right;
+    margin-left: auto;
+    color:#35C6B2;
+
+}
+.zen_icon {
+    border: 1px solid #35baff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+    background-color: #2A3B4C;
+}
+.portal_card {
+    border: 1px solid #286da5;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin-top: 10px;
+}
+.game_card h3 {
+    font-size: 25px;
+}
+
+.game_card p {
+    color: pink;
+}
+.portal_divider {
+    height: 1px;
+    background-color: #0F1E2A;
+    margin: 15px 0;
+}
+.portal_footer span{
+    color: #F5C76B;
+}
+.portal_footer{
+    display: flex;
+}
+.portal_footer button{
+    margin-left: auto;
+    color: #25C6B7;
+    height: 40px;
+    width: 40px;
+    background-color: #41678e;
+    border-radius: 50px;
+    border: none;
+    text-align: center;
+}
+.sound_portal{
+    border: 1px solid #286da5;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 20px 0;
+
+}
+.sound_icon {
+    border: 1px solid #35baff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+    background-color: #2A3B4C;
+
+}
+.sound_journey h3{
+    font-size: 25px;
+}
+.sound_journey p{
+    color: pink;
+    padding-bottom: 10px;
+}
+.sound_divider {
+    height: 1px;
+    background-color: #0F1E2A;
+    margin: 15px 0;
+
+}
+.sound_footer{
+    display: flex;
+}
+.sound_footer span{
+    color: #25C6B7;
+}
+.sound_footer button{
+    margin-left: auto;
+    color: #25C6B7;
+    height: 40px;
+    width: 40px;
+    background-color: #41678e;
+    border-radius: 50px;
+    border: none;
+    text-align: center;
+}
+
+.vagus_portal {
+    border: 1px solid #286da5;
+    border-radius: 10px;
+    padding: 10px 30px;
+    padding-bottom: 20px;
+}
+.vagus_icon{
+    border-radius: 50%;
+    border: 1px solid #35baff;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    background-color: #41678e;
+    display: flex;
+
+}
+.vegus_content h3 {
+    font-size: 25px;
+}
+.vagus_content p {
+    color: pink;
 }
