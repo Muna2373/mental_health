@@ -1,14 +1,14 @@
 import { FormField } from "./FormField.jsx";
 import { RememberToggle } from "./RememberToggle.jsx";
 
-export function LoginForm({ rememberMe, onRememberChange, onSubmit }) {
+export function LoginForm({ rememberMe, onRememberChange, onSubmit, isLoading }) {
   return (
     <form className="login-form" onSubmit={onSubmit}>
       <FormField
         label="Email"
         name="email"
         type="email"
-        defaultValue="alex.jordan@gmail.com"
+        placeholder="Enter your Email"
         autoComplete="email"
       />
 
@@ -16,25 +16,25 @@ export function LoginForm({ rememberMe, onRememberChange, onSubmit }) {
         label="Password"
         name="password"
         type="password"
-        placeholder="Enter your password"
+        placeholder="Enter your Password"
         autoComplete="current-password"
       />
 
       <a className="forgot-link" href="#forgot-password">
-        Forgot password?
+        Forgot your password?
       </a>
 
       <RememberToggle checked={rememberMe} onChange={onRememberChange} />
 
-      <button className="login-button" type="submit">
-        Log in
+      <button className="login-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Logging in..." : "Login"}
       </button>
 
-      <div className="or-divider" role="separator" aria-label="Or">
+        {/*<div className="or-divider" role="separator" aria-label="Or">
         <span />
         <b>OR</b>
         <span />
-      </div>
+      </div>*/}
     </form>
   );
 }

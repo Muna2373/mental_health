@@ -6,10 +6,9 @@ export function LoginHeader() {
         <span />
         <span />
       </div>
-      <h1 id="login-title">Welcome back to Nucleus</h1>
+      <h1>Welcome back to Your 3M </h1>
       <p>
-        Build your design system effortlessly with our
-        <br className="desktop-break" /> powerful component library.
+        Please log in to continue.
       </p>
     </header>
   );

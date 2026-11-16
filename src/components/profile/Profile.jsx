@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import { FiUser, FiBell, FiShield, FiMoon, FiLogOut, FiAward } from 'react-icons/fi';
-import './Profile.css';
+import '/src/components/profile/Profile.css';
 
 export default function ProfilePage() {
     const [notifications, setNotifications] = useState(true);
     const [biometric, setBiometric] = useState(true);
     const [darkMode, setDarkMode] = useState(true);
 
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        window.location.href  = "/login" };
+
     return (
         <div className="profile-container">
-            <h1 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>
-                Mindful Profile
-            </h1>
+            <h1 className="profile-title">Mindful Profile</h1>
 
             <div className="profile-user-card">
                 <div className="profile-avatar-large">
@@ -29,15 +32,15 @@ export default function ProfilePage() {
             <div className="profile-stats-grid">
                 <div className="profile-stat-box">
                     <p className="profile-stat-label">Streak</p>
-                    <p className="profile-stat-value" style={{ color: '#FF5722' }}>🔥 7 Days</p>
+                    <p className="profile-stat-value stat-streak">🔥 7 Days</p>
                 </div>
                 <div className="profile-stat-box">
                     <p className="profile-stat-label">Total Time</p>
-                    <p className="profile-stat-value" style={{ color: '#00E676' }}>⏱️ 145m</p>
+                    <p className="profile-stat-value stat-time">⏱️ 145m</p>
                 </div>
                 <div className="profile-stat-box">
                     <p className="profile-stat-label">Vault Burns</p>
-                    <p className="profile-stat-value" style={{ color: '#FFB74D' }}>⚡ 12</p>
+                    <p className="profile-stat-value stat-vault">⚡ 12</p>
                 </div>
             </div>
 
@@ -91,11 +94,7 @@ export default function ProfilePage() {
 
             </div>
 
-            <button
-                className="btn-primary"
-                style={{ backgroundColor: 'transparent', border: '1px solid rgba(255, 87, 34, 0.4)', color: '#FF5722', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
-                onClick={() => alert('Logged out successfully')}
-            >
+            <button className="btn-primary btn-signout" onClick={handleLogout}>
                 <FiLogOut /> Sign Out
             </button>
 
