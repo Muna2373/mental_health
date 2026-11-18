@@ -21,7 +21,7 @@ function BurnVault() {
             </div>*/}
             <div className="lock"> 🔒 Your thoughts are private and will be automatically deleted after the selected time
             </div>
-            <div className="burn_options">
+            {/*<div className="burn_options">
                 <div className="burn-options">
 
                     <span>Burn after:</span>
@@ -47,7 +47,7 @@ function BurnVault() {
                     🔥 Release My Stress
                 </button>
 
-            </div>
+            </div>*/}
 
             <div className="active_burn">
 
@@ -66,9 +66,9 @@ function BurnVault() {
                             <h3>Work Overload & Expectations</h3>
                         </div>
 
-                        <p className="burn_count">
+                        {/*<p className="burn_count">
                             🕒 Burns in 2d, 14h
-                        </p>
+                        </p>*/}
 
                     </div>
 
