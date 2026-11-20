@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FormField } from "../login/FormField.jsx";
-import "/src/components/login/LoginPage.css";
+import { FormField } from "./FormField.jsx"
+import "./LoginPage.css";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -21,6 +21,7 @@ export default function RegistrationPage({ onAuthSuccess }) {
         const confirmPassword = form.elements.confirmPassword.value;
         const tel = form.elements.tel?.value.trim() || "";
         const gender = form.elements.gender?.value || "";
+        const dob = form.elements.dob?.value || "";
 
         if (password.length < 6) {
             setError("Password must be at least 6 characters long.");
@@ -37,7 +38,7 @@ export default function RegistrationPage({ onAuthSuccess }) {
             const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, password, tel, gender })
+                body: JSON.stringify({ name, email, password, tel, gender, dob })
             });
 
             const data = await response.json();
@@ -86,6 +87,14 @@ export default function RegistrationPage({ onAuthSuccess }) {
                     />
 
                     <FormField
+                        label="Date of Birth"
+                        name="dob"
+                        type="date"
+                        placeholder="Enter your Date of Birth"
+                        autoComplete="bday"
+                    />
+
+                    <FormField
                         label="Email"
                         name="email"
                         type="email"
@@ -102,7 +111,7 @@ export default function RegistrationPage({ onAuthSuccess }) {
                         required={false}
                     />
 
-                    <div className="form-field">
+                    <div className="form-field-select">
                         <label htmlFor="gender">Gender (Optional)</label>
                         <select id="gender" name="gender" defaultValue="">
                             <option value="">Select gender</option>

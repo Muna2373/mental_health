@@ -40,7 +40,7 @@ function App() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 2500);
+        }, 1800);
 
         return () => clearTimeout(timer);
     }, []);
@@ -54,7 +54,7 @@ function handleLogout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     sessionStorage.removeItem("token");
-    sessionStorage.removeItem("users");
+    sessionStorage.removeItem("user");
     setCurrentUser(null);
     setIsAuthenticated(false);
 }

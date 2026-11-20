@@ -68,12 +68,13 @@
 .form-field label {
   color: #62616a;
   font-size: 1.05rem;
+  margin-bottom: 8px;
   font-weight: 500;
 }
 
 .form-field input {
   width: 100%;
-  min-height: 76px;
+  min-height: 67px;
   padding: 14px 18px;
   color: #16151b;
   background: rgba(255, 255, 255, 0.45);
@@ -83,6 +84,36 @@
   font: inherit;
   font-size: 1.35rem;
   transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.form-field-select {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.form-field-select label {
+  color: #62616a;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-field-select select,input,textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  font-size: 16px;
+  line-height: 1.5 !important;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+
+  color: #16151b;
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .form-field input:focus {

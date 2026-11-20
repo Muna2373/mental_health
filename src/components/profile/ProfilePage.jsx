@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiUser, FiBell, FiShield, FiMoon, FiLogOut, FiAward } from 'react-icons/fi';
-import '/src/components/profile/Profile.css';
+import '/src/components/profile/ProfilePage.css';
 
 export default function ProfilePage( { user, onLogout }) {
     const [notifications, setNotifications] = useState(true);
@@ -9,15 +9,26 @@ export default function ProfilePage( { user, onLogout }) {
     const [darkMode, setDarkMode] = useState(true);
     const navigate = useNavigate();
 
-    const displayName = user?.name || "Muath";
+    const storedRaw = localStorage.getItem("user") || sessionStorage.getItem("user");
+    let storedUser = null;
+    if (storedRaw) {
+        try { storedUser = JSON.parse(storedRaw);
+        } catch { storedUser = null;}
+    }
+
+    const activeUser = user || storedUser;
+    const displayName = activeUser?.name || "Member";
+    {/*const displayName = user?.name || "Muath";*/}
 
     const handleLogout = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("user");
+
         onLogout?.();
-        navigate("/login", { replace: true });
+        window.location.href = "/login";
+        {/*navigate("/login", { replace: true }); */}
     };
 
     return (
@@ -30,10 +41,10 @@ export default function ProfilePage( { user, onLogout }) {
                 </div>
                 <div className="profile-user-info">
                     <h2>{displayName}</h2>
-                    <p>Level 3 • Inner Peace Seeker</p>
+                    <p>{activeUser?.email || "Level 3 • Inner Peace Seeker"}</p>
                     <span className="profile-badge">
             ● Active Member <FiAward />
-          </span>
+                    </span>
                 </div>
             </div>
 

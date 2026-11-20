@@ -45,7 +45,7 @@ export default function LoginPage({onLoginSuccess}) {
         storage.setItem("token", data.token);
       }
       if (data.user) {
-        storage.setItm("user", JSON.stringify(data.user));
+        storage.setItem("user", JSON.stringify(data.user));
       }
 
       onLoginSuccess?.(data.user);

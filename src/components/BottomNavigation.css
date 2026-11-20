@@ -6,13 +6,15 @@
     position: fixed;
     bottom: 0;
     left: 50%;
-    width: 100%;
+    width: 90%;
     max-width: 414px;
     padding: 12px 0;
-    background: #102b45;
+    /*background: #102b45;*/
+    background: linear-gradient(45deg, black, transparent);
     border-top: 1px solid #24516e;
     transform: translateX(-50%);
     z-index: 10;
+    border-radius: 24px;
 }
 
 .nav-item {

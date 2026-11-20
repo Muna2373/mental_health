@@ -8,7 +8,8 @@
 
 .home_header{
     color: #35C6B2;
-    padding: 30px 80px;
+    /*padding: 30px 80px;*/
+    padding: 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -61,7 +62,8 @@
 
 /*Burnvault css*/
 .burn-vault {
-    padding: 15px 60px;
+    /*padding: 15px 60px;*/
+    padding: 20px;
     width: 100%;
     max-width: 1400px;
     margin: 25px auto;
