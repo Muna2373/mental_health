@@ -1,5 +1,6 @@
 import { FormField } from "./FormField.jsx";
 import { RememberToggle } from "./RememberToggle.jsx";
+import { Link } from "react-router-dom";
 
 export function LoginForm({ rememberMe, onRememberChange, onSubmit, isLoading }) {
   return (
@@ -20,21 +21,14 @@ export function LoginForm({ rememberMe, onRememberChange, onSubmit, isLoading })
         autoComplete="current-password"
       />
 
-      <a className="forgot-link" href="#forgot-password">
-        Forgot your password?
-      </a>
+        <Link className="forgot-link" to="/forgot-password"><span>Forgot your password?</span></Link>
+        <Link className="forgot-link" to="/register"><span>Sign up for an account</span></Link>
 
-      <RememberToggle checked={rememberMe} onChange={onRememberChange} />
+        <RememberToggle checked={rememberMe} onChange={onRememberChange} />
 
       <button className="login-button" type="submit" disabled={isLoading}>
           {isLoading ? "Logging in..." : "Login"}
       </button>
-
-        {/*<div className="or-divider" role="separator" aria-label="Or">
-        <span />
-        <b>OR</b>
-        <span />
-      </div>*/}
     </form>
   );
 }

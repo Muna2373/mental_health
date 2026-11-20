@@ -91,13 +91,15 @@
 }
 
 .forgot-link {
-  display: inline-block;
+  display: flex;
   margin: 0 0 32px;
   /*color: var(--purple);*/
   color: #8a9ba8;
   font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .forgot-link:hover {

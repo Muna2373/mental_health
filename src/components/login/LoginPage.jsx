@@ -4,32 +4,13 @@ import { LoginHeader } from "/src/components/login/LoginHeader.jsx";
 import { LoginForm } from "/src/components/login/LoginForm.jsx";
 import "/src/components/login/LoginPage.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export default function LoginPage({onLoginSuccess}) {
   const [rememberMe, setRememberMe] = useState(true);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-
-  {/*function handleLogin(event) {
-    event.preventDefault();
-    // Connect this handler to your authentication API.
-    console.log("Login submitted", {
-      email: event.currentTarget.email.value,
-      rememberMe
-    });
-  }
-
-  return (
-    <main className="login-page">
-      <section className="login-card" aria-labelledby="login-title">
-        <LoginHeader />
-        <LoginForm
-          rememberMe={rememberMe}
-          onRememberChange={setRememberMe}
-          onSubmit={handleLogin}
-        />
-      </section>
-    </main>*/}
 
   async function handleLogin(event) {
     event.preventDefault();
@@ -38,35 +19,48 @@ export default function LoginPage({onLoginSuccess}) {
     setIsLoading(true);
 
     const form = event.currentTarget;
-    const email = form.elements.email.value;
+    const email = form.elements.email.value.trim();
     const password = form.elements.password.value;
 
-    // Mock Login
-    setTimeout(() => {
-      if (
-          email === "test@gmail.com" &&
-          password === "123456"
-      ) {
-        // Mock Authentication
-        localStorage.setItem("token", "mock-login-token");
-        onLoginSuccess();
-        navigate("/home", { replace: true });
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/auth/log`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({email, password, rememberMe})
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.message || "Login failed.");
+        return;
       }
-      else {
-        setError("Invalid Email or Password");
+      const storage = rememberMe ? localStorage : sessionStorage;
+      const otherStorage = rememberMe ? sessionStorage : localStorage;
+
+      otherStorage.removeItem("token");
+      otherStorage.removeItem("user");
+
+      if (data.token) {
+        storage.setItem("token", data.token);
       }
+      if (data.user) {
+        storage.setItm("user", JSON.stringify(data.user));
+      }
+
+      onLoginSuccess?.(data.user);
+      navigate("/home", {replace: true});
+    } catch {
+      setError("Unable to connect to the server. Please try again.");
+    } finally {
       setIsLoading(false);
-    }, 800);
+    }
   }
 
   return (
       <main className="login-page">
-        <section
-            className="login-card"
-            aria-labelledby="login-title"
-        >
-          <LoginHeader />
-
+        <section className="login-card" aria-labelledby="login-title">
+          <LoginHeader/>
           <LoginForm
               rememberMe={rememberMe}
               onRememberChange={setRememberMe}
@@ -75,9 +69,7 @@ export default function LoginPage({onLoginSuccess}) {
           />
 
           {error && (
-              <p className="login-error" role="alert">
-                {error}
-              </p>
+              <p className="login-error" role="alert">{error}</p>
           )}
         </section>
       </main>
