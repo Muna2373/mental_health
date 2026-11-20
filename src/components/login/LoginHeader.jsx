@@ -8,7 +8,7 @@ export function LoginHeader() {
       </div>
       <h1>Welcome back to Your 3M </h1>
       <p>
-        Please log in to continue.
+        Please Login to continue.
       </p>
     </header>
   );

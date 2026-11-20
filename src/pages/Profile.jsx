@@ -1,5 +1,5 @@
 import TopNav from "../components/calm/TopNav.jsx";
-import ProfilePage from "../components/profile/Profile.jsx";
+import ProfilePage from "../components/profile/ProfilePage.jsx";
 
 function Profile() {
     return (
