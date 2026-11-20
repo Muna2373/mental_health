@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { FiUser, FiBell, FiShield, FiMoon, FiLogOut, FiAward } from 'react-icons/fi';
 import '/src/components/profile/ProfilePage.css';
 
@@ -7,7 +6,6 @@ export default function ProfilePage( { user, onLogout }) {
     const [notifications, setNotifications] = useState(true);
     const [biometric, setBiometric] = useState(true);
     const [darkMode, setDarkMode] = useState(true);
-    const navigate = useNavigate();
 
     const storedRaw = localStorage.getItem("user") || sessionStorage.getItem("user");
     let storedUser = null;
