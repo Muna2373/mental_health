@@ -12,12 +12,9 @@ function BurnVault() {
             <div className="thought_box">
                 <h3> ✍️ What's on your mind today??</h3>
 
-                <textarea placeholder="Write your thoughts, feelings, or worries here...." maxLength={500}
+                <textarea placeholder="Write your thoughts, feelings, or worries here...." className="textarea-box"
                 />
 
-                <div className="character-count">
-                    0 / 500
-                </div>
             </div>
             <div className="lock"> 🔒 Your thoughts are private and will be automatically deleted after the selected time
             </div>
