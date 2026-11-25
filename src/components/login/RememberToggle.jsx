@@ -1,16 +1,18 @@
+import styles from "./LoginPage.module.css";
+
 export function RememberToggle({ checked, onChange }) {
   return (
-    <label className="remember-row">
+    <label className={styles.rememberRow}>
       <span>Remember sign in details</span>
       <input
-        className="toggle-input"
+        className={styles.toggleInput}
         type="checkbox"
         checked={checked}
         onChange={(event) => onChange(event.target.checked)}
         aria-label="Remember sign in details"
       />
-      <span className="toggle-track" aria-hidden="true">
-        <span className="toggle-thumb" />
+      <span className={styles.toggleTrack} aria-hidden="true">
+        <span className={styles.toggleThumb} />
       </span>
     </label>
   );

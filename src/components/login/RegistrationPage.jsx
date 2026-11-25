@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FormField } from "./FormField.jsx"
-import "./LoginPage.css";
+import { FormField } from "./FormField.jsx";
+import { useAuth } from "../../context/authContext.js";
+import styles from "./LoginPage.module.css";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-
-export default function RegistrationPage({ onAuthSuccess }) {
+export default function RegistrationPage() {
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
+    const { register } = useAuth();
 
     async function handleRegister(event) {
         event.preventDefault();
@@ -35,40 +35,20 @@ export default function RegistrationPage({ onAuthSuccess }) {
 
         setIsLoading(true);
         try {
-            const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, password, tel, gender, dob })
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                setError(data.message || "Registration failed.");
-                return;
-            }
-
-            if (data.token) {
-                localStorage.setItem("token", data.token);
-            }
-            if (data.user) {
-                localStorage.setItem("user", JSON.stringify(data.user));
-            }
-
-            onAuthSuccess?.(data);
+            await register({ name, email, password, tel, gender, dob });
             navigate("/home", { replace: true });
-        } catch {
-            setError("Unable to connect to the server. Please try again.");
+        } catch (err) {
+            setError(err?.message || "Registration failed.");
         } finally {
             setIsLoading(false);
         }
     }
 
     return (
-        <main className="login-page">
-            <section className="login-card" aria-labelledby="register-title">
-                <header className="login-header">
-                    <div className="brand-mark" aria-hidden="true">
+        <main className={styles.loginPage}>
+            <section className={styles.loginCard} aria-labelledby="register-title">
+                <header className={styles.loginHeader}>
+                    <div className={styles.brandMark} aria-hidden="true">
                         <span />
                         <span />
                         <span />
@@ -77,7 +57,7 @@ export default function RegistrationPage({ onAuthSuccess }) {
                     <p>Sign up to get started.</p>
                 </header>
 
-                <form className="login-form" onSubmit={handleRegister}>
+                <form className={styles.loginForm} onSubmit={handleRegister}>
                     <FormField
                         label="Full Name"
                         name="name"
@@ -111,7 +91,7 @@ export default function RegistrationPage({ onAuthSuccess }) {
                         required={false}
                     />
 
-                    <div className="form-field-select">
+                    <div className={styles.formFieldSelect}>
                         <label htmlFor="gender">Gender (Optional)</label>
                         <select id="gender" name="gender" defaultValue="">
                             <option value="">Select gender</option>
@@ -138,17 +118,17 @@ export default function RegistrationPage({ onAuthSuccess }) {
                         autoComplete="new-password"
                     />
 
-                    <Link className="forgot-link" to="/login">
+                    <Link className={styles.forgotLink} to="/login">
                         Already have an account? Log in.
                     </Link>
 
-                    <button className="login-button" type="submit" disabled={isLoading}>
+                    <button className={styles.loginButton} type="submit" disabled={isLoading}>
                         {isLoading ? "Creating account..." : "Sign Up"}
                     </button>
                 </form>
 
                 {error && (
-                    <p className="login-error" role="alert">
+                    <p className={styles.loginError} role="alert">
                         {error}
                     </p>
                 )}

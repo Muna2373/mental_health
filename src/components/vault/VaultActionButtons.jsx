@@ -1,9 +1,10 @@
 import { FiClock } from 'react-icons/fi';
 import { FaFireFlameCurved } from "react-icons/fa6";
+import styles from './Vault.module.css';
 
 function VaultActionButtons({ onSeal, onBurnNow }) {
     return (
-        <div className="actions-container">
+        <div className={styles.actionsContainer}>
             <button
                 className="btn-primary"
                 onClick={onSeal}
@@ -12,13 +13,15 @@ function VaultActionButtons({ onSeal, onBurnNow }) {
                 <FaFireFlameCurved /> Seal & Schedule Burn
             </button>
 
-            <button onClick={onBurnNow} className="btn-secondary-burn">
+            <button onClick={onBurnNow} className={styles.btnSecondaryBurn}>
                 <FiClock /> Instant Incineration (Hold 2s to Burn Now)
             </button>
 
-            <p className="actions-footer-text">
+            <p className={styles.actionsFooterText}>
                 NO RECORD RETAINED. NO SERVER BACKDOORS.
             </p>
         </div>
     );
-}export default VaultActionButtons;
+}
+
+export default VaultActionButtons;

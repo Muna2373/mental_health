@@ -1,9 +1,9 @@
-import TopNav from "../components/calm/TopNav.jsx";
+import TopNav from "../components/common/TopNav.jsx";
 import ProfilePage from "../components/profile/ProfilePage.jsx";
 
 function Profile() {
     return (
-        <div>
+        <div className="page-shell">
             <TopNav/>
             <ProfilePage/>
         </div>

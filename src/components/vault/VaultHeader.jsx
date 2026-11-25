@@ -1,24 +1,24 @@
 import { FiArrowLeft } from 'react-icons/fi';
 import { FaFireFlameCurved } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
-import './Vault.css';
+import styles from './Vault.module.css';
 
 export default function VaultHeader() {
     const navigate = useNavigate();
 
     return (
-        <div className="vault-header">
+        <div className={styles.vaultHeader}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <button className="vault-back-btn" onClick={() => navigate(-1)}>
+                <button className={styles.vaultBackBtn} onClick={() => navigate(-1)}>
                     <FiArrowLeft />
                 </button>
-                <div className="vault-title-group">
+                <div className={styles.vaultTitleGroup}>
                     <h2>3M Sanctuary</h2>
-                    <span className="vault-subtitle">RELEASE & BURN</span>
+                    <span className={styles.vaultSubtitle}>RELEASE & BURN</span>
                 </div>
             </div>
 
-            <div className="vault-streak-badge">
+            <div className={styles.vaultStreakBadge}>
                 <FaFireFlameCurved /> 2 Days
             </div>
         </div>

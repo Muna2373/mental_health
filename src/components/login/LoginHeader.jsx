@@ -1,12 +1,14 @@
+import styles from "./LoginPage.module.css";
+
 export function LoginHeader() {
   return (
-    <header className="login-header">
-      <div className="brand-mark" aria-hidden="true">
+    <header className={styles.loginHeader}>
+      <div className={styles.brandMark} aria-hidden="true">
         <span />
         <span />
         <span />
       </div>
-      <h1>Welcome back to Your 3M </h1>
+      <h1 id="login-title">Welcome back to Your 3M</h1>
       <p>
         Please Login to continue.
       </p>

@@ -1,0 +1,285 @@
+.vaultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.vaultBackBtn {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.vaultTitleGroup h2 {
+  font-size: var(--text-lg);
+  font-weight: bold;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.vaultSubtitle {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.vaultStreakBadge {
+  background-color: rgba(255, 87, 34, 0.15);
+  border: 1px solid rgba(255, 87, 34, 0.4);
+  border-radius: 20px;
+  padding: 4px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-orange);
+  font-size: var(--text-xs);
+  font-weight: bold;
+}
+
+/* Somatic Tags */
+.somaticContainer {
+  margin-bottom: 20px;
+}
+
+.somaticHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+  font-size: 11px;
+}
+
+.somaticLabel {
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.somaticHint {
+  color: var(--accent-teal);
+}
+
+.somaticTagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.somaticTagBtn {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: var(--text-xs);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.somaticTagDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Sanctuary Canvas */
+.canvasCard {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.canvasHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 11px;
+}
+
+.canvasTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-orange);
+}
+
+.canvasTitleText {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.canvasCharCount {
+  color: var(--text-muted);
+}
+
+.sanctuaryTextarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+  font-size: var(--text-sm);
+  resize: none;
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+.sanctuaryTextarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.canvasFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  font-size: var(--text-xs);
+}
+
+.encryptionInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-teal);
+}
+
+.resetBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-xs);
+  transition: color 0.2s;
+}
+
+.resetBtn:hover {
+  color: var(--text-main);
+}
+
+/* Auto-Decay Protocol */
+.decayCard {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--border-color);
+}
+
+.decayHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.decayTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.decayBadge {
+  font-size: 11px;
+  color: var(--accent-amber);
+  background-color: rgba(255, 183, 77, 0.1);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.decayOptionsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.decayOptionBox {
+  border-radius: var(--radius-md);
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.decayOptionBoxActive {
+  border: 1px solid var(--accent-orange);
+  background-color: rgba(255, 87, 34, 0.08);
+}
+
+.decayOptionBoxInactive {
+  border: 1px solid var(--border-strong);
+  background-color: transparent;
+}
+
+.decayOptionTop {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.decayTimeVal {
+  font-size: var(--text-lg);
+  font-weight: bold;
+  margin: 6px 0 2px;
+}
+
+.decayDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.decayFooterInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Action Buttons */
+.actionsContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btnSecondaryBurn {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  color: var(--text-muted);
+  padding: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: var(--space-md);
+  transition: all 0.2s;
+}
+
+.btnSecondaryBurn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--text-main);
+}
+
+.actionsFooterText {
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}

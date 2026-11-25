@@ -1,39 +1,41 @@
+import styles from "./Home.module.css";
+
 function MindfulPortals () {
     return (
-        <div className="mindful-portals">
-            <div className="mindful_header">
+        <div className={styles["mindful-portals"]}>
+            <div className={styles.mindful_header}>
                  <h2>Daily Mindful Portals</h2>
                 <span>Quick Sessions</span>
             </div>
 
-            <div className="portal_card">
-                <div className="zen_icon">
+            <div className={styles.portal_card}>
+                <div className={styles.zen_icon}>
                     🧘
                 </div>
-                <div className="game_card">
+                <div className={styles.game_card}>
                      <h3>Zen Pulse Mini-Game</h3>
                       <p>
                          Synchronized somatic breathwork
                          with tactile ripple taps.
                       </p>
-                    <div className="portal_divider"></div>
-                         <div className="portal_footer">
+                    <div className={styles.portal_divider}></div>
+                         <div className={styles.portal_footer}>
                              <span>◷ 4 mins to calm</span>
                              <button>▶</button>
                           </div>
                      </div>
                  </div>
-            <div className="sound_portal">
-                <div className="sound_icon">
+            <div className={styles.sound_portal}>
+                <div className={styles.sound_icon}>
                     🎵
                 </div>
-                <div className="sound_journey">
+                <div className={styles.sound_journey}>
                      <h3>Soundscape Journey</h3>
                      <p>
                          Rain on Cedarwood • 432Hz acoustic frequency.
                      </p>
-                        <div className="sound_divider"></div>
-                        <div className="sound_footer">
+                        <div className={styles.sound_divider}></div>
+                        <div className={styles.sound_footer}>
                              <span>
                                  ● Frequency Live
                              </span>
@@ -43,11 +45,11 @@ function MindfulPortals () {
             </div>
 
             <div>
-                <div className="vagus_portal">
-                    <div className="vagus_icon">
+                <div className={styles.vagus_portal}>
+                    <div className={styles.vagus_icon}>
                         🌬️
                     </div>
-                    <div className="vagus_content">
+                    <div className={styles.vagus_content}>
                         <h3> Vagus Nerve Reset</h3>
                         <p>
                             Inhale deeply for 4 seconds, exhale

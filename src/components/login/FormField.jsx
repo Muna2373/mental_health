@@ -1,3 +1,5 @@
+import styles from "./LoginPage.module.css";
+
 export function FormField({
   label,
   name,
@@ -8,7 +10,7 @@ export function FormField({
   required = true
 }) {
   return (
-    <div className="form-field">
+    <div className={styles.formField}>
       <label htmlFor={name}>{label}</label>
       <input
         id={name}

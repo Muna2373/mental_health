@@ -1,0 +1,231 @@
+.loginPage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-lg) var(--space-md);
+  background-color: var(--bg-dark);
+}
+
+.loginCard {
+  width: 100%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) 20px;
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.brandMark {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transform: rotate(-18deg);
+}
+
+.brandMark span {
+  display: block;
+  width: 6px;
+  background: linear-gradient(180deg, var(--accent-teal), var(--accent-orange));
+  border-radius: var(--radius-sm);
+}
+
+.brandMark span:nth-child(1) {
+  height: 16px;
+}
+
+.brandMark span:nth-child(2) {
+  height: 28px;
+}
+
+.brandMark span:nth-child(3) {
+  height: 20px;
+}
+
+.loginHeader h1 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.loginHeader p {
+  margin: var(--space-sm) auto 0;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.loginForm {
+  width: 100%;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-md);
+}
+
+.formField label,
+.formFieldSelect label {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.formField input,
+.formFieldSelect select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  color: var(--text-main);
+  background: var(--bg-input);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  outline: none;
+  font-size: var(--text-base);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.formField input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
+.formFieldSelect {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+.formFieldSelect select option {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+}
+
+.formField input:focus,
+.formFieldSelect select:focus {
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 3px rgba(53, 198, 178, 0.2);
+}
+
+.forgotLink {
+  display: inline-block;
+  margin: 0 0 12px;
+  color: var(--accent-teal);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.forgotLink + .forgotLink {
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+.rememberRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: var(--space-sm) 0 var(--space-lg);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.toggleInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.toggleTrack {
+  width: 48px;
+  height: 26px;
+  flex: 0 0 auto;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  transition: background 160ms ease;
+}
+
+.toggleThumb {
+  width: 18px;
+  height: 18px;
+  background: var(--text-main);
+  border-radius: 50%;
+  transition: transform 160ms ease;
+}
+
+.toggleInput:checked + .toggleTrack {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+}
+
+.toggleInput:checked + .toggleTrack .toggleThumb {
+  transform: translateX(22px);
+}
+
+.toggleInput:focus-visible + .toggleTrack {
+  outline: 2px solid var(--accent-teal);
+  outline-offset: 2px;
+}
+
+.loginButton {
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: var(--radius-xl);
+  color: var(--text-main);
+  background: var(--accent-orange);
+  font-size: var(--text-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, opacity 160ms ease;
+}
+
+.loginButton:hover {
+  opacity: 0.94;
+}
+
+.loginButton:active {
+  transform: scale(0.98);
+}
+
+.loginButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loginError {
+  margin: var(--space-md) 0 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 82, 82, 0.12);
+  border: 1px solid rgba(255, 82, 82, 0.35);
+  color: var(--accent-danger);
+  font-size: var(--text-sm);
+  text-align: center;
+}

@@ -6,24 +6,12 @@ import Vault from "./pages/Vault";
 import Game from "./pages/Game";
 import CalmPulse from "./pages/CalmPulse.jsx";
 import Profile from "./pages/Profile";
-import Loading from "./pages/Loading.jsx"
+import Loading from "./pages/Loading.jsx";
 import BottomNavigation from "./components/BottomNavigation";
 import LoginPage from "./components/login/LoginPage.jsx";
-import RegistrationPage from "./components/login/RegistrationPage.jsx"
-
-function getStorageToken() {
-    return localStorage.getItem("token") || sessionStorage.getItem("token");
-}
-
-function getStorageUser() {
-    const raw = localStorage.getItem("user") || sessionStorage.getItem("user");
-    if (!raw) return null;
-    try {
-        return JSON.parse(raw);
-    } catch {
-        return null;
-    }
-}
+import RegistrationPage from "./components/login/RegistrationPage.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
+import { useAuth } from "./context/authContext.js";
 
 function ProtectedRoute({ isAuthenticated, children }) {
     if (!isAuthenticated) {
@@ -32,10 +20,9 @@ function ProtectedRoute({ isAuthenticated, children }) {
     return children;
 }
 
-function App() {
-    const [isLoading, setIsLoading] = useState(true)
-    const [isAuthenticated, setIsAuthenticated] = useState(() => !!getStorageToken());
-    const [currentUser, setCurrentUser] = useState(() => getStorageUser());
+export function AppContent() {
+    const [isLoading, setIsLoading] = useState(true);
+    const { isAuthenticated } = useAuth();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -45,39 +32,33 @@ function App() {
         return () => clearTimeout(timer);
     }, []);
 
-function handleAuthSuccess(userData) {
-    setIsAuthenticated(true);
-    setCurrentUser(userData || getStorageUser());
-    }
-
-function handleLogout() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user");
-    setCurrentUser(null);
-    setIsAuthenticated(false);
-}
-
-if (isLoading) {
+    if (isLoading) {
         return <Loading />;
     }
 
-return (
-    <BrowserRouter>
+    return (
+        <BrowserRouter>
             <Routes>
-                <Route path="/login" element={isAuthenticated ? (<Navigate to="/home" replace />) : (<LoginPage onLoginSuccess={handleAuthSuccess} />)}/>
-                <Route path="/register" element={isAuthenticated ? (<Navigate to="/home" replace />) : (<RegistrationPage onAuthSuccess={handleAuthSuccess} />)}/>
-                <Route path="/" element={isAuthenticated ? (<Navigate to="/home" replace />) : (<Navigate to="/login" replace />)}/>
-                <Route path="/home" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Home user={currentUser} /></ProtectedRoute>}/>
-                <Route path="/vault" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Vault user={currentUser} /></ProtectedRoute>}/>
-                <Route path="/game" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Game user={currentUser} /></ProtectedRoute>}/>
-                <Route path="/audio" element={<ProtectedRoute isAuthenticated={isAuthenticated}><CalmPulse user={currentUser} /></ProtectedRoute>}/>
-                <Route path="/profile" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Profile user={currentUser} onLogout={handleLogout} /></ProtectedRoute>}/>
-                <Route path="*" element={<Navigate to={isAuthenticated ? "/home" : "/login"} replace />}/>
+                <Route path="/login" element={isAuthenticated ? (<Navigate to="/home" replace />) : (<LoginPage />)} />
+                <Route path="/register" element={isAuthenticated ? (<Navigate to="/home" replace />) : (<RegistrationPage />)} />
+                <Route path="/" element={isAuthenticated ? (<Navigate to="/home" replace />) : (<Navigate to="/login" replace />)} />
+                <Route path="/home" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Home /></ProtectedRoute>} />
+                <Route path="/vault" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Vault /></ProtectedRoute>} />
+                <Route path="/game" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Game /></ProtectedRoute>} />
+                <Route path="/audio" element={<ProtectedRoute isAuthenticated={isAuthenticated}><CalmPulse /></ProtectedRoute>} />
+                <Route path="/profile" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Profile /></ProtectedRoute>} />
+                <Route path="*" element={<Navigate to={isAuthenticated ? "/home" : "/login"} replace />} />
             </Routes>
             {isAuthenticated && <BottomNavigation />}
         </BrowserRouter>
+    );
+}
+
+function App() {
+    return (
+        <AuthProvider>
+            <AppContent />
+        </AuthProvider>
     );
 }
 

@@ -1,0 +1,58 @@
+.topNavigation {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: var(--space-md) 0;
+  color: var(--text-main);
+}
+
+.topActionBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actionBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.actionBtn:hover {
+  color: var(--text-main);
+}
+
+.title {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent-teal);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profileBtn {
+  display: flex;
+  height: 32px;
+  width: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-amber) 100%);
+  color: var(--text-main);
+  text-decoration: none;
+  cursor: pointer;
+}

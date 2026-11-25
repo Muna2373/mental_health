@@ -1,11 +1,11 @@
 import HomeHeader from "../components/homepage/HomeHeader.jsx";
 import BurnVault from "../components/homepage/BurnVault.jsx";
 import MindfulPortals from "../components/homepage/MindfulPortals.jsx";
-import "../components/homepage/Home.css";
+import styles from "../components/homepage/Home.module.css";
 
 function Home() {
     return (
-        <div className="home_page">
+        <div className={styles.home_page}>
             <HomeHeader/>
             <BurnVault/>
             <MindfulPortals/>
